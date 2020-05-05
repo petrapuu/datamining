@@ -1,0 +1,52 @@
+DROP TABLE "bgg.ldaOut.topics";
+
+DROP TABLE "bgg.topics";
+
+DROP TABLE "bgg.ldaOut.top.documents";
+
+DROP TABLE "bgg.ldaOut.top.terms";
+
+ALTER TABLE "BoardGames"
+      DROP COLUMN "row_name", "name.id", "details.description", "details.image",
+      	   "details.maxplaytime", "details.thumbnail", "attributes.boardgameartist",
+	   "attributes.boardgamedesigner", "attributes.boardgameexpansion",
+	   "attributes.boardgamefamily", "attributes.boardgameimplementation",
+	   "attributes.boardgameintegration","attributes.total","stats.bayesaverage",
+	   "stats.median", "stats.numcomments", "stats.stddev",
+	   "stats.subtype.boardgame.bayesaverage", "stats.trading", "stats.wanting",
+	   "stats.wishing", "attributes.t.links.concat.2....";
+
+
+DELETE FROM "BoardGames"
+       WHERE "game.type" LIKE "boardgameexpansion";
+
+DELETE FROM "BoardGames"
+       WHERE "attributes.boardgamecompilation" IS NOT NULL;
+
+DELETE FROM "BoardGames"
+       WHERE "stats.usersrated" < XXXXX
+
+
+ALTER TABLE "BoardGames"
+      DROP COLUMN "game.type", "attributes.boardgamecompilation",
+      	   "stats.family.abstracts.bayesaverage", "stats.family.abstracts.pos",
+	   "stats.family.cgs.bayesaverage", "stats.family.cgs.pos",
+	   "stats.family.childrensgames.bayesaverage",
+  	   "stats.family.childrensgames.pos",
+	   "stats.family.familygames.bayesaverage",
+	   "stats.family.familygames.pos",
+	   "stats.family.partygames.bayesaverage",
+	   "stats.family.partygames.pos",
+	   "stats.family.strategygames.bayesaverage",
+	   "stats.family.strategygames.pos",
+	   "stats.family.thematic.bayesaverage",
+	   "stats.family.thematic.pos",
+	   "stats.family.wargames.bayesaverage",
+	   "stats.family.wargames.pos",
+	   "stats.family.amiga.bayesaverage","stats.family.amiga.pos",
+	   "stats.family.arcade.bayesaverage","stats.family.arcade.pos",
+	   "stats.family.atarist.bayesaverage","stats.family.atarist.pos",
+	   "stats.family.commodore64.bayesaverage","stats.family.commodore64.pos",
+	   "stats.subtype.rpgitem.bayesaverage","stats.subtype.rpgitem.pos",
+	   "stats.subtype.videogame.bayesaverage","stats.subtype.videogame.pos";
+ 
